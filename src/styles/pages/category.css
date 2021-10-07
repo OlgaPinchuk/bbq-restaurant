@@ -1,0 +1,8 @@
+.category-content {
+  margin: var(--space-big);
+  font-size: var(--font-size-big);
+}
+
+.category-content .product-card img {
+  max-width: 100%;
+}

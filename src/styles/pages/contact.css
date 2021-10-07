@@ -1,0 +1,50 @@
+.contact .hero {
+  height: auto;
+  align-content: flex-start;
+}
+.contact .hero-image {
+  width: 100%;
+  max-width: 680px;
+  object-fit: cover;
+}
+
+.content-section {
+  margin: 20px auto;
+  width: 90vw;
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  grid-gap: 10px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.content-section > * {
+  background: var(--color-light-grey);
+  padding: 5px;
+}
+
+.content-section input {
+  background: inherit;
+}
+
+.content-section h2 {
+  margin-bottom: 10px;
+  font-size: var(--font-size-big);
+}
+
+.content-section b {
+  display: block;
+}
+
+/* Media queries */
+@media (min-width: 750px) {
+  .content-section {
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+  }
+
+  .content-section > * {
+    background: none;
+  }
+}

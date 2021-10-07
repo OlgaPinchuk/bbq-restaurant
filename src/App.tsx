@@ -8,6 +8,7 @@ import NavBar from "components/shared/NavBar";
 import { HomePage } from "components/Home";
 import { MenuPage } from "components/Menu/";
 import { ContactPage } from "components/Contact";
+import { AdminPage } from "components/Admin";
 import Footer from "components/shared/Footer";
 
 import firebaseInstance from "scripts/firebase";
@@ -23,15 +24,13 @@ export default function App() {
   const database = getFirestore(firebaseInstance);
 
   useEffect(() => {
-    getCollection(database, "categories")
-      .then((result) => {
-        setCategories(result as iCategory[]);
-        setStatus(1);
-      })
-      .catch((error) => {
-        console.log(error);
-        setStatus(2);
-      });
+    async function getCategories() {
+      const collection = await getCollection(database, "categories");
+      setCategories(collection as iCategory[]);
+      setStatus(1);
+    }
+
+    getCategories();
   }, [database]);
 
   return (
@@ -44,8 +43,10 @@ export default function App() {
           </Route>
           <Route path="/menu" component={MenuPage} />
           <Route path="/contact" component={ContactPage} />
+          <Route path="/admin" component={AdminPage} />
         </Switch>
         <Footer />
+        <Route path="/admin"/>
       </BrowserRouter>
     </div>
   );

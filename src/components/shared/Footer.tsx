@@ -7,7 +7,7 @@ import Link from "./Link";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <div className="social-media">
         <Link href="https://www.facebook.com">
           <FontAwesomeIcon icon={faFacebook} size="lg" />
@@ -17,7 +17,7 @@ const Footer = () => {
         </Link>
       </div>
       <div className="copyright">
-        <p> © 2021 • Restorant Name</p>
+        <p> © 2021 • Restaurant Name</p>
       </div>
     </footer>
   );

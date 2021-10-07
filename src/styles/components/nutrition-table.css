@@ -1,0 +1,48 @@
+.nutrition-table {
+  max-width: 600px;
+  width: 70vw;
+  margin: auto;
+}
+
+.nutrition-table caption {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nutrition-table tr {
+  line-height: 1.5;
+  border-bottom: 1px solid var(--color-black);
+}
+
+.thick-row-top td {
+  border-top: 5px solid var(--color-black);
+}
+
+.thick-row-bottom td {
+  border-bottom: 5px solid var(--color-black);
+}
+
+.nutrition-table td:nth-child(2) {
+  text-align: right;
+}
+
+.main-text {
+  font-weight: bold;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.nutrition-table tr:nth-of-type(6) span,
+.nutrition-table tr:nth-of-type(8) span,
+.nutrition-table tr:nth-of-type(9) span,
+.nutrition-table tr:nth-of-type(10) span,
+.nutrition-table tr:nth-of-type(13) span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nutrition-table tr:last-of-type td {
+  border-bottom: 5px solid var(--color-black);
+}

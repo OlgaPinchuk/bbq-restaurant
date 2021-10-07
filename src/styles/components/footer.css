@@ -1,0 +1,19 @@
+.footer {
+  padding: var(--space-medium);
+  background: var(--color-black-pearl);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-media {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-media a {
+  display: inline-block;
+  margin-right: var(--space-small);
+}
