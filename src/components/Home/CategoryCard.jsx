@@ -1,11 +1,5 @@
-// Project files
-import iCategory from "types/iCategory";
 
-interface iProps {
-  item: iCategory;
-}
-
-export default function CategoryCard({ item }: iProps) {
+export default function CategoryCard({ item }) {
 
   const { name, description } = item;
   // const {image} = item;

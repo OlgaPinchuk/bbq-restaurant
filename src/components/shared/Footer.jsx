@@ -5,7 +5,7 @@ import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 // Project files
 import Link from "./Link";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="footer">
       <div className="social-media">
@@ -21,6 +21,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

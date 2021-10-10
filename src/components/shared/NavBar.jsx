@@ -1,7 +1,7 @@
 // NPM packages
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+export default function NavBar() {
   return (
     <nav className="site-navigation">
       <Link to="/">
@@ -18,6 +18,4 @@ const NavBar = () => {
       </ul>
     </nav>
   );
-};
-
-export default NavBar;
+}
