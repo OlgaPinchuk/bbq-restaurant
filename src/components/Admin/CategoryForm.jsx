@@ -22,6 +22,11 @@ export default function CategoryForm({ categoryInfo, onSubmit }) {
         value={fields.name || ""}
         onChange={handleFieldChange}
       />
+      <textarea
+        name="description"
+        value={fields.description || ""}
+        onChange={handleFieldChange}
+      ></textarea>
     </form>
   );
 }
