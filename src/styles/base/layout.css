@@ -64,7 +64,8 @@ h1 {
 }
 
 .hero h1 {
-  color: var(--color-white);
+  color: var(--color-dark-red);
+  font-family: Oswald, sans-serif;
 }
 
 .page-content {

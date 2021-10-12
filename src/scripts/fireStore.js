@@ -8,6 +8,9 @@ import {
   deleteDoc,
 } from "firebase/firestore/lite";
 
+// Project files
+import { fireStoreInstance } from "./firebase";
+
 // Create collection
 export async function createDocument(db, path, data) {
   await setDoc(doc(db, path), data);
@@ -15,10 +18,10 @@ export async function createDocument(db, path, data) {
 }
 
 // Read collection
-export async function getCollection(db, path) {
-  const fsCollection = collection(db, path);
-  const collectionSnapshot = await getDocs(fsCollection);
-  return collectionSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+export async function getCollection(path) {
+  const collectionReference = collection(fireStoreInstance, path);
+  const snapshot = await getDocs(collectionReference);
+  return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 }
 
 // Update file

@@ -1,7 +1,5 @@
 // NPM packages
-import { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { getFirestore } from "firebase/firestore/lite";
 
 // Project files
 import NavBar from "./components/shared/NavBar";
@@ -10,44 +8,31 @@ import { MenuPage } from "./components/Menu/";
 import { ContactPage } from "./components/Contact";
 import { AdminPage } from "./components/Admin";
 import Footer from "./components/shared/Footer";
-
-import firebaseInstance from "./scripts/firebase";
-import { getCollection } from "./scripts/fireStore";
+import { useCategories } from "./state/CategoriesProvider";
 
 export default function App() {
-  // Local state
-  const [categories, setCategories] = useState([]);
-  const [status, setStatus] = useState(0); // 0 - loading, 1 - loaded, 2 - error
+  // Constants
+  const { status } = useCategories();
 
-  // Properties
-  const database = getFirestore(firebaseInstance);
-
-  useEffect(() => {
-    async function getCategories() {
-      const collection = await getCollection(database, "categories");
-      setCategories(collection);
-      setStatus(1);
-    }
-
-    getCategories();
-  }, [database]);
+  const Browser = (
+    <BrowserRouter>
+      <NavBar />
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/menu" component={MenuPage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route path="/admin" component={AdminPage} />
+      </Switch>
+      <Footer />
+    </BrowserRouter>
+  );
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route path="/" exact>
-            <HomePage categories={categories} />
-          </Route>
-          <Route path="/menu" component={MenuPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route path="/admin">
-            <AdminPage categories={categories} />
-          </Route>
-        </Switch>
-        <Footer />
-      </BrowserRouter>
+      {status === 0 && <p>Loading ⏱</p>}
+      {status === 1 && Browser}
+      {status === 2 && <p>Error 🚨</p>}
     </div>
   );
 }
+

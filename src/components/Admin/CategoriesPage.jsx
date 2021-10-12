@@ -1,20 +1,18 @@
 // NPM packages
 import { Link } from "react-router-dom";
-import { getFirestore } from "firebase/firestore/lite";
 
 // Project files
 import CategoryList from "./CategoryList";
-import firebaseInstance from "../../scripts/firebase";
-import { deleteDocument } from "../../scripts/fireStore";
+import { useCategories } from "../../state/CategoriesProvider";
 
-export default function CategoriesPage({ categories }) {
-  // Properties
-  const database = getFirestore(firebaseInstance);
+export default function CategoriesPage() {
+  // Constant
+  const { categories } = useCategories();
 
   // Methods
-  function deleteCategory(id) {
-    deleteDocument(database, "categories", id);
-  }
+  // function deleteCategory(id) {
+  //   deleteDocument(database, "categories", id);
+  // }
 
   return (
     <>
@@ -22,7 +20,7 @@ export default function CategoriesPage({ categories }) {
       <Link className="btn btn-primary" to="/categories">
         Add Category
       </Link>
-      <CategoryList categories={categories} onDelete={deleteCategory} />
+      <CategoryList categories={categories} onDelete={() => {}} />
     </>
   );
 }

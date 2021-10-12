@@ -5,7 +5,7 @@
   right: 0;
   padding: 0 10px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: var(--color-black);
   z-index: 9999;
   display: flex;
   justify-content: space-between;
@@ -21,7 +21,7 @@
 
 .nav-links a {
   margin-right: 10px;
-  color: var(--color-black-pearl);
+  color: var(--color-white);
   text-decoration: none;
   font-weight: 700;
 }
