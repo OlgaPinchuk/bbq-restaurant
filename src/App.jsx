@@ -1,46 +1,38 @@
 // NPM packages
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { useState, useCallback, useEffect } from "react";
 
 // Project files
-import NavBar from "./components/shared/NavBar";
-import HomePage from "./components/Home";
-import MenuPage from "./components/Menu";
-import ContactPage from "./components/Contact";
-import AdminPage from "./components/Admin";
-import AdminProducts from "./components/AdminProducts";
-import AdminCategories from "./components/AdminCategories";
-import AdminProductDetails from "./components/AdminProductDetails";
-import Footer from "./components/shared/Footer";
+import Browser from "./components/shared/Browser";
+import { getCollection } from "./scripts/fireStore";
 import { useCategories } from "./state/CategoriesProvider";
 
 export default function App() {
   // Constants
-  const { status } = useCategories();
+  const { dispatch } = useCategories();
 
-  const Browser = (
-    <BrowserRouter>
-      <NavBar />
-      <main className="main-content">
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/menu" component={MenuPage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route path="/admin" component={AdminPage} />
-        <Route path="/admin-categories/:id" component={AdminCategories} />
-        <Route path="/admin-products/:id" component={AdminProducts} />
-        <Route path="/admin-product/:id" component={AdminProductDetails} />
-      </Switch>
-      </main>
-      <Footer />
-    </BrowserRouter>
-  );
+  // Local state
+  const [status, setStatus] = useState(0); // 0 loading, 1 loaded, 2 error
+
+  // Methods
+  const fetchData = useCallback(async (path) => {
+    try {
+      const data = await getCollection(path);
+
+      dispatch({ type: "READ_ALL_CATEGORIES", payload: data });
+      setStatus(1);
+    } catch {
+      setStatus(2);
+    }
+  }, []);
+
+  // @ts-ignore
+  useEffect(() => fetchData("categories"), [fetchData]);
 
   return (
     <div className="App">
       {status === 0 && <p>Loading ⏱</p>}
-      {status === 1 && Browser}
+      {status === 1 && <Browser />}
       {status === 2 && <p>Error 🚨</p>}
     </div>
   );
 }
-
