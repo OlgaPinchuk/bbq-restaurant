@@ -2,11 +2,11 @@
 import { Link } from "react-router-dom";
 
 // Project files
-import { useCategories } from "../../state/CategoriesProvider";
+import { useMenu } from "../../state/MenuProvider";
 
 export default function AdminProducts({ match, history }) {
   const { name, slug } = match.params;
-  const { categories } = useCategories();
+  const { categories } = useMenu();
 
   // const { menuItems } = categories.find((item) => item.name === name);
 

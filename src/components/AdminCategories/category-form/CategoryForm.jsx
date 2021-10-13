@@ -5,7 +5,7 @@ import { useState } from "react";
 import InputField from "../../shared/InputField";
 import InputImage from "../../shared/InputImage";
 import fields from "./fields.json";
-import { useCategories } from "../../../state/CategoriesProvider";
+import { useMenu } from "../../../state/MenuProvider";
 import { updateDocument, createDocument } from "../../../scripts/fireStore";
 
 export default function CategoryForm({ category, id }) {
@@ -15,7 +15,7 @@ export default function CategoryForm({ category, id }) {
   const [description, setDescription] = useState(category.description);
 
   // Properties
-  const { dispatch } = useCategories();
+  const { dispatch } = useMenu();
   const slug = name.toLowerCase().split(" ").join("-");
   const filename = `images/${slug}`;
 

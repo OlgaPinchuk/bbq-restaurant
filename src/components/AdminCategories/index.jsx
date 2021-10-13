@@ -3,11 +3,12 @@ import { useParams } from "react-router-dom";
 
 // Project files
 import CategoryForm from "./category-form/CategoryForm";
+import AdminCategoryDetails from "./AdminCategoryDetails";
 import newCategory from "./NewCategory";
-import { useCategories } from "../../state/CategoriesProvider";
+import { useMenu } from "../../state/MenuProvider";
 
 export default function AdminCategories() {
-  const { categories } = useCategories();
+  const { categories } = useMenu();
   const { id } = useParams();
   const category = getCategory(categories, id);
   // Properties
@@ -23,8 +24,9 @@ export default function AdminCategories() {
 
   return (
     <section className="page admin-categories">
-      <h1>{title}</h1>
-      <CategoryForm category={category} id={id} />
+      {/* <h1>{title}</h1> */}
+      <AdminCategoryDetails category={category}/>
+      {/* <CategoryForm category={category} id={id} /> */}
     </section>
   );
 }

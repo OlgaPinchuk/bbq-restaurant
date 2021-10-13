@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 // Project files
 import CategoryCard from "./CategoryCard";
-import { useCategories } from "../../state/CategoriesProvider";
+import { useMenu } from "../../state/MenuProvider";
 
 export default function HomePage() {
   // Constant
-  const { categories } = useCategories();
+  const { categories } = useMenu();
 
   const Categories = categories.map((item) => (
     <li key={item.id}>

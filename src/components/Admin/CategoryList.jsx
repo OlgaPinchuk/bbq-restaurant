@@ -2,15 +2,11 @@
 import { Link } from "react-router-dom";
 
 // Project files
-import { useCategories } from "../../state/CategoriesProvider";
+import { useMenu } from "../../state/MenuProvider";
 
 export default function CategoryList() {
-  const { categories } = useCategories();
+  const { categories } = useMenu();
 
-  // Methods
-  // function deleteCategory(id) {
-  //   console.log("category id", id);
-  // }
 
   return (
     <table className="admin-table category-table">

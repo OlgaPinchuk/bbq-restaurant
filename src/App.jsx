@@ -4,11 +4,11 @@ import { useState, useCallback, useEffect } from "react";
 // Project files
 import Browser from "./components/shared/Browser";
 import { getCollection } from "./scripts/fireStore";
-import { useCategories } from "./state/CategoriesProvider";
+import { useMenu } from "./state/MenuProvider";
 
 export default function App() {
   // Constants
-  const { dispatch } = useCategories();
+  const { dispatch } = useMenu();
 
   // Local state
   const [status, setStatus] = useState(0); // 0 loading, 1 loaded, 2 error
