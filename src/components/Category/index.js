@@ -1,1 +1,3 @@
-export { default as CategoryPage } from "./CategoryPage";
+export default function CategoryPage() {
+  return <h1>Category Page</h1>;
+}

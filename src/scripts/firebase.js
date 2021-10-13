@@ -1,6 +1,7 @@
 // NPM packages
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore/lite";
+import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -16,3 +17,4 @@ const firebaseConfig = {
 const firebaseInstance = initializeApp(firebaseConfig);
 
 export const fireStoreInstance = getFirestore(firebaseInstance);
+export const storageInstance = getStorage(firebaseInstance);

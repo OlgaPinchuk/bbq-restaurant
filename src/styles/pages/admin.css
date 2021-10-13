@@ -1,0 +1,77 @@
+.admin-page {
+  margin-top: 90px;
+}
+
+.admin-page .button {
+  display: inline-block;
+  padding: 8px 10px;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-align: center;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.admin-page .add-btn {
+  color: #fff;
+  background-color: darkslateblue;
+  border: 1px solid darkslateblue;
+}
+
+.admin-page .add-btn:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.admin-page h2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  text-align: center;
+  color: var(--color-dark-red);
+}
+
+.menu-categories {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+/* Table */
+.admin-table {
+  width: 100%;
+  margin-top: 15px;
+  color: #212529;
+  border-collapse: collapse;
+}
+
+.admin-table td,
+.admin-table th {
+  padding: 15px;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.admin-table thead th {
+  /* padding: 10px; */
+  vertical-align: bottom;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.admin-page .btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.admin-page .btn-outline-danger:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.category-link {
+  color: darkslateblue;
+  text-decoration: underline;
+}

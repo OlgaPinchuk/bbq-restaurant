@@ -9,6 +9,8 @@
 @import url("./base/layout.css");
 
 /* Pages */
+@import url("./pages/admin.css");
+@import url("./pages/admin-categories.css");
 @import url("./pages/category.css");
 @import url("./pages/contact.css");
 @import url("./pages/home.css");

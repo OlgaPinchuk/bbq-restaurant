@@ -16,6 +16,13 @@ h1 {
   text-transform: uppercase;
 }
 
+p {
+  font-size: 15px;
+  line-height: 21px;
+  margin-bottom: 15px;
+  max-width: 634px;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -40,7 +47,7 @@ h1 {
 
 .page {
   grid-area: main;
-  margin-top: 60px;
+  margin: 90px auto;
 }
 
 .footer {
@@ -94,6 +101,12 @@ h1 {
 .button:disabled {
   background-color: #cccccc;
   color: #666666;
+}
+
+.custom-file-chooser img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
 /* Media queries */

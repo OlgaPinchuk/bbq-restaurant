@@ -1,1 +1,3 @@
-export { default as ProductPage } from "./ProductPage";
+export default function ProductPage() {
+  return <h1>Product Page</h1>;
+}

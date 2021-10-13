@@ -1,0 +1,17 @@
+{
+  "image": {
+    "label": "Image"
+  },
+  "name": {
+    "label": "Category name",
+    "instructions": "",
+    "placeholder": "Desserts",
+    "type": "text"
+  },
+  "description": {
+    "label": "Description",
+    "instructions": "",
+    "placeholder": "A short description of the category",
+    "type": "text"
+  }
+}

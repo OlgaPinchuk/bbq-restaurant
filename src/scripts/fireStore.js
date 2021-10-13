@@ -1,10 +1,10 @@
 // NPM packages
 import {
+  doc,
   collection,
   getDocs,
-  setDoc,
+  addDoc,
   updateDoc,
-  doc,
   deleteDoc,
 } from "firebase/firestore/lite";
 
@@ -12,9 +12,11 @@ import {
 import { fireStoreInstance } from "./firebase";
 
 // Create collection
-export async function createDocument(db, path, data) {
-  await setDoc(doc(db, path), data);
-  console.log("Document sent");
+export async function createDocument(path, data) {
+  const collectionReference = collection(fireStoreInstance, path);
+  const newDoc = await addDoc(collectionReference, data);
+
+  return newDoc.id;
 }
 
 // Read collection
@@ -25,10 +27,10 @@ export async function getCollection(path) {
 }
 
 // Update file
-export async function updateDocument(db, path, id, data) {
-  const docReference = doc(db, path, id);
+export async function updateDocument(path, docId, data) {
+  const documentReference = doc(fireStoreInstance, path, docId);
 
-  await updateDoc(docReference, data);
+  await updateDoc(documentReference, data);
 }
 
 // Delete file
