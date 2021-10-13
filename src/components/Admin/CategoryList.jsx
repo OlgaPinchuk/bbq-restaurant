@@ -19,6 +19,7 @@ export default function CategoryList() {
           {/* <th>&nbsp;</th> */}
           <th>Title</th>
           <th>Description</th>
+          <th>Picture</th>
         </tr>
       </thead>
       <tbody>
@@ -36,9 +37,12 @@ export default function CategoryList() {
                 </button>
               </td> */}
               <td>
-                <Link className="category-link" to={"/admin-category/" + category.slug}>{category.name}</Link>
+                <Link className="category-link" to={"/admin-categories/" + category.id}>{category.name}</Link>
               </td>
               <td>{category.description}</td>
+              <td>
+              <img src={category.imageURL} alt="Category thumbnail" />
+              </td>
             </tr>
           );
         })}

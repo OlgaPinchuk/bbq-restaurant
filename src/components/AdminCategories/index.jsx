@@ -10,13 +10,12 @@ export default function AdminCategories() {
   const { categories } = useCategories();
   const { id } = useParams();
   const category = getCategory(categories, id);
-
   // Properties
   const title = category.name === "" ? "Create category" : "Edit category";
 
   // Methods
   function getCategory(categories, id) {
-    const oldCategory = categories.find((item) => item.url === id);
+    const oldCategory = categories.find((item) => item.id === id);
 
     return oldCategory ?? newCategory;
   }
