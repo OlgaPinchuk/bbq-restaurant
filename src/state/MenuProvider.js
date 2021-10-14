@@ -11,10 +11,10 @@ const MenuContext = createContext(null);
 export function MenuProvider({ children }) {
   // Local state
   const [categories, categoryDispatch] = useReducer(categoryReducer, []);
-  const [dishes, productDispatch] = useReducer(productReducer, []);
+  const [products, productDispatch] = useReducer(productReducer, []);
 
   return (
-    <MenuContext.Provider value={{ categories, dishes, categoryDispatch, productDispatch }}>
+    <MenuContext.Provider value={{ categories, products, categoryDispatch, productDispatch }}>
       {children}
     </MenuContext.Provider>
   );

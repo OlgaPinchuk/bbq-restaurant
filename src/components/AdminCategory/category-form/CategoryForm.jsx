@@ -32,7 +32,7 @@ export default function CategoryForm({ category, id }) {
 
     // to do
     // 1 upload to firebase using await
-    if (id !== "new-category") await updateDocument(path, id, editedCategory);
+    if (id !== "") await updateDocument(path, id, editedCategory);
     else await createDocument(path, editedCategory);
 
     // 2 call the dispatches to update candidates AFTER upload

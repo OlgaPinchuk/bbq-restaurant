@@ -17,7 +17,7 @@ export default function Footer() {
         </Link>
       </div>
       <div className="copyright">
-        <p> © 2021 • Restaurant Name</p>
+        <p> © 2021 • BBQ Ribs House</p>
       </div>
     </footer>
   );

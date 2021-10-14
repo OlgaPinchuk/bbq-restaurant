@@ -1,5 +1,6 @@
 // NPM packages
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 // Project files
 import InputField from "../../shared/InputField";
@@ -8,27 +9,36 @@ import fields from "./fields.json";
 import { useMenu } from "../../../state/MenuProvider";
 import { updateDocument, createDocument } from "../../../scripts/fireStore";
 
-export default function ProductForm({ product, id }) {
+export default function ProductForm({ product, id, categoryId }) {
   // Local state
-  const [imageURL, setImageUrL] = useState(product.imageURL);
   const [name, setName] = useState(product.name);
-  const [shortDescription, setShortDescription] = useState(product.setShortDescription);
-  const [detailedDescription, setDetailedDescription] = useState(product.detailedDescription);
-  
+  const [imageURL, setImageUrL] = useState(product.imageURL);
+  const [price, setPrice] = useState(product.price);
+  const [shortInfo, setShortInfo] = useState(product.shortInfo);
+  const [detailedInfo, setDetailedIndo] = useState(product.detailedInfo);
+  const [ingredients, setIngredients] = useState(product.ingredients && product.ingredients.join(', '));
 
   // Properties
   const { productDispatch } = useMenu();
   const slug = name.toLowerCase().split(" ").join("-");
   const filename = `images/${slug}`;
 
+
   // Methods
   async function onPublish() {
-    const path = `categories/${id}/${slug}`;
+    const path = `categories/${categoryId}/menuItems/`;
+    const ingredientsToArray =
+    ingredients.length > 0
+      ? ingredients.split(",").map((item) => item.trim())
+      : [];
+
     const editedProduct = {
       imageURL: imageURL,
       name: name,
-      shortDescription: shortDescription,
-      detailedDescription: detailedDescription,
+      price: price,
+      shortInfo: shortInfo,
+      detailedInfo: detailedInfo,
+      ingredients: ingredientsToArray,
       slug: slug,
     };
 
@@ -36,33 +46,39 @@ export default function ProductForm({ product, id }) {
 
     // to do
     // 1 upload to firebase using await
-    if (id !== "new-product") await updateDocument(path, id, editedProduct);
+    if (id !== "") await updateDocument(path, id, editedProduct);
     else await createDocument(path, editedProduct);
 
     // 2 call the dispatches to update candidates AFTER upload
     productDispatch({
-      type: "UPDATE_CATEGORY",
+      type: "UPDATE_PRODUCT",
       payload: { id: id, data: editedProduct },
     });
   }
 
   return (
     <section className="form category-form">
-
       <InputField state={[name, setName]} options={fields.name} />
+      <InputField state={[price, setPrice]} options={fields.price} />
       <InputField
-        state={[shortDescription, setShortDescription]}
-        options={fields.shortDescription}
+        state={[shortInfo, setShortInfo]}
+        options={fields.shortInfo}
       />
-       <InputField
-        state={[detailedDescription, setDetailedDescription]}
-        options={fields.detailedDescription}
+      <InputField
+        state={[detailedInfo, setDetailedIndo]}
+        options={fields.detailedInfo}
       />
       <InputImage
         state={[imageURL, setImageUrL]}
         label={fields.image.label}
         filename={filename}
       />
+      <InputField
+        state={[ingredients, setIngredients]}
+        options={fields.ingredients}
+      />
+     
+
       <footer>
         <button className="button" onClick={onPublish}>
           Publish product

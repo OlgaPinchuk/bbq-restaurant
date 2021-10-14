@@ -5,16 +5,22 @@
   "name": {
     "label": "Product name",
     "instructions": "",
-    "placeholder": "Grilled meat",
+    "placeholder": "f.ex. Grilled meat",
     "type": "text"
   },
-  "shortDescription": {
+  "price": {
+    "label": "Product price",
+    "instructions": "",
+    "placeholder": "f.ex. 200",
+    "type": "number"
+  },
+  "shortInfo": {
     "label": "Short description",
     "instructions": "",
     "placeholder": "A short description of the product",
     "type": "text"
   },
-  "detailedDescription": {
+  "detailedInfo": {
     "label": "Detailed description",
     "instructions": "",
     "placeholder": "A detailed description of the product",
@@ -22,7 +28,7 @@
   },
   "ingredients": {
     "label": "Ingredients",
-    "instructions": "Ingredient1, ingredient 2 etc.",
+    "instructions": "Enter ingredients(separate by commas)",
     "placeholder": "A list of the product ingredients"
   }
 }

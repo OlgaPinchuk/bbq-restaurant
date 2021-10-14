@@ -9,7 +9,7 @@ import ContactPage from "../Contact";
 import AdminPage from "../Admin";
 import AdminProduct from "../AdminProduct";
 import AdminCategory from "../AdminCategory";
-import AdminProductDetails from "../AdminProductDetails";
+// import AdminProductDetails from "../AdminProductDetails";
 import Footer from "./Footer";
 
 export default function Browser() {
@@ -24,7 +24,7 @@ export default function Browser() {
       <Route path="/admin" component={AdminPage} />
       <Route path="/admin-categories/:slug" component={AdminCategory} />
       <Route path="/admin-products/:slug" component={AdminProduct} />
-      <Route path="/admin-product/:slug" component={AdminProductDetails} />
+      {/* <Route path="/admin-product/:slug" component={AdminProductDetails} /> */}
     </Switch>
     </main>
     <Footer />
