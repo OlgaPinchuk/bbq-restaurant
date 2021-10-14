@@ -11,16 +11,17 @@ export default function InputImage({ label, state, filename }) {
   // Methods
   async function onEvent(event, file) {
     const imageURL = await uploadImage(event, file);
+
     setter(imageURL);
   }
 
   return (
     <fieldset className="input-image">
-      <b>{label}:</b>
-      <label className="custom-file-chooser">
+      <legend><b>{label}:</b></legend>
+      <label className="custom-file-chooser"><b>Upload image:</b>
         <input onChange={(event) => onEvent(event, filename)} type="file" />
         <img src={Image} alt="User generated content" />
-      </label>
+        </label>
     </fieldset>
   );
 }

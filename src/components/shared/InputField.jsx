@@ -4,8 +4,7 @@ export default function InputField({ options, state }) {
 
   return (
     <fieldset className="input-field">
-      <label>
-        <b>{label}:</b>
+      <legend><b>{label}:</b></legend>
         {instructions && <small>{instructions}</small>}
         <input
           type={type}
@@ -13,7 +12,6 @@ export default function InputField({ options, state }) {
           value={getter}
           onChange={(event) => setter(event.target.value)}
         />
-      </label>
     </fieldset>
   );
 }

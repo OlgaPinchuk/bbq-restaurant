@@ -77,3 +77,36 @@
   color: darkslateblue;
   text-decoration: underline;
 }
+
+.admin-form {
+  width: 50vw;
+  min-width: 500px;
+  margin: 20px auto;
+}
+
+.form fieldset {
+  margin: 25px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form legend {
+  font-size: 20px;
+}
+
+.admin-form input[type=text] {
+  margin: 0 auto;
+  padding: 10px;
+  width: 70%;
+  font-size: 16px;
+  display: flex;
+}
+
+.admin-form .save-button {
+  background: #1ec469;
+  color: var(--color-white);
+}
+
+.admin-form .cancel-button {
+  background: var(--color-light-grey);
+}

@@ -1,5 +1,6 @@
 // NPM packages
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 // Project files
 import InputField from "../../shared/InputField";
@@ -9,6 +10,9 @@ import { useMenu } from "../../../state/MenuProvider";
 import { updateDocument, createDocument } from "../../../scripts/fireStore";
 
 export default function CategoryForm({ category, id }) {
+  // Global state
+  const history = useHistory();
+
   // Local state
   const [imageURL, setImageUrL] = useState(category.imageURL);
   const [name, setName] = useState(category.name);
@@ -30,20 +34,18 @@ export default function CategoryForm({ category, id }) {
       slug: slug,
     };
 
-    // to do
-    // 1 upload to firebase using await
     if (id !== "") await updateDocument(path, id, editedCategory);
     else await createDocument(path, editedCategory);
 
-    // 2 call the dispatches to update candidates AFTER upload
     categoryDispatch({
       type: "UPDATE_CATEGORY",
       payload: { id: id, data: editedCategory },
     });
+    history.goBack();
   }
 
   return (
-    <section className="form category-form">
+    <section className="form admin-form">
       <h2>{pageTitle}</h2>
       <InputField state={[name, setName]} options={fields.name} />
       <InputField
@@ -56,7 +58,7 @@ export default function CategoryForm({ category, id }) {
         filename={filename}
       />
       <footer>
-        <button className="button" onClick={onPublish}>
+        <button className="button save-button" onClick={onPublish}>
           Publish category
         </button>
       </footer>

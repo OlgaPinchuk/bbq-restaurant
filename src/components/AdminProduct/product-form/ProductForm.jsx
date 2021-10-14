@@ -1,6 +1,6 @@
 // NPM packages
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // Project files
 import InputField from "../../shared/InputField";
@@ -10,27 +10,31 @@ import { useMenu } from "../../../state/MenuProvider";
 import { updateDocument, createDocument } from "../../../scripts/fireStore";
 
 export default function ProductForm({ product, id, categoryId }) {
+  // Global state
+  const history = useHistory();
+
   // Local state
   const [name, setName] = useState(product.name);
   const [imageURL, setImageUrL] = useState(product.imageURL);
   const [price, setPrice] = useState(product.price);
   const [shortInfo, setShortInfo] = useState(product.shortInfo);
   const [detailedInfo, setDetailedIndo] = useState(product.detailedInfo);
-  const [ingredients, setIngredients] = useState(product.ingredients && product.ingredients.join(', '));
+  const [ingredients, setIngredients] = useState(
+    product.ingredients && product.ingredients.join(", ")
+  );
 
   // Properties
   const { productDispatch } = useMenu();
   const slug = name.toLowerCase().split(" ").join("-");
   const filename = `images/${slug}`;
 
-
   // Methods
   async function onPublish() {
     const path = `categories/${categoryId}/menuItems/`;
     const ingredientsToArray =
-    ingredients.length > 0
-      ? ingredients.split(",").map((item) => item.trim())
-      : [];
+      ingredients.length > 0
+        ? ingredients.split(",").map((item) => item.trim())
+        : [];
 
     const editedProduct = {
       imageURL: imageURL,
@@ -54,10 +58,11 @@ export default function ProductForm({ product, id, categoryId }) {
       type: "UPDATE_PRODUCT",
       payload: { id: id, data: editedProduct },
     });
+    history.goBack();
   }
 
   return (
-    <section className="form category-form">
+    <section className="form admin-form">
       <InputField state={[name, setName]} options={fields.name} />
       <InputField state={[price, setPrice]} options={fields.price} />
       <InputField
@@ -77,10 +82,9 @@ export default function ProductForm({ product, id, categoryId }) {
         state={[ingredients, setIngredients]}
         options={fields.ingredients}
       />
-     
 
       <footer>
-        <button className="button" onClick={onPublish}>
+        <button className="button save-button" onClick={onPublish}>
           Publish product
         </button>
       </footer>
