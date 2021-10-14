@@ -10,7 +10,7 @@ export default function MenuCategories() {
   return (
     <div className="menu-categories">
       <h1>Menu Categories</h1>
-      <Link className="button add-btn" to="/admin-categories/new-category">
+      <Link className="button edit-btn" to="/admin-categories/new-category">
         Add Category
       </Link>
 

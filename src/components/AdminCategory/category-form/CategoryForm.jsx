@@ -18,6 +18,7 @@ export default function CategoryForm({ category, id }) {
   const { categoryDispatch } = useMenu();
   const slug = name.toLowerCase().split(" ").join("-");
   const filename = `images/${slug}`;
+  const pageTitle = category.name === "" ? "Create category" : "Edit category";
 
   // Methods
   async function onPublish() {
@@ -28,8 +29,6 @@ export default function CategoryForm({ category, id }) {
       description: description,
       slug: slug,
     };
-
-    console.log("editedCategory", editedCategory);
 
     // to do
     // 1 upload to firebase using await
@@ -45,6 +44,7 @@ export default function CategoryForm({ category, id }) {
 
   return (
     <section className="form category-form">
+      <h2>{pageTitle}</h2>
       <InputField state={[name, setName]} options={fields.name} />
       <InputField
         state={[description, setDescription]}

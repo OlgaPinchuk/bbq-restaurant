@@ -12,15 +12,13 @@ export default function AdminCategory() {
   // Global state
   const { categories } = useMenu();
   const { slug } = useParams();
-  const initialMode = slug === "new-category";
 
   // Properties
-  const category = getCategory(categories, slug);
+  const currentCategory = getCategory(categories, slug);
+  const initialMode = slug === "new-category";
 
   // Local state
   const [editMode, setEditMode] = useState(initialMode);
-
-  //const title = category.name === "" ? "Create category" : "Edit category";
 
   // Methods
   function getCategory(categories, id) {
@@ -31,9 +29,9 @@ export default function AdminCategory() {
   return (
     <section className="page admin-category">
       {!editMode ? (
-        <CategoryItems category={category} onEdit={() => setEditMode(true)} />
+        <CategoryItems category={currentCategory} onEdit={() => setEditMode(true)} />
       ) : (
-        <CategoryForm category={category} id={category.id} />
+        <CategoryForm category={currentCategory} id={currentCategory.id} />
       )}
     </section>
   );

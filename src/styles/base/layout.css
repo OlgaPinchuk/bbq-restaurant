@@ -109,6 +109,15 @@ p {
   vertical-align: middle;
 }
 
+.edit-btn {
+  max-width: none;
+  width: auto;
+  color: #fff;
+  background-color: darkslateblue;
+  border: 1px solid darkslateblue;
+  box-shadow: 0 2px 4px 0 grey
+}
+
 /* Media queries */
 @media (min-width: 1024px) {
   .products-category .card {

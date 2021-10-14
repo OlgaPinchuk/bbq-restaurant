@@ -7,23 +7,23 @@ import { getCollection } from "../../scripts/fireStore";
 
 export default function CategoryItems({ category, onEdit }) {
   // Global state
-  const { categories, productDispatch } = useMenu();
+  const { productDispatch } = useMenu();
   const { name } = category;
 
   // Local state
-  const [items, setItems] = useState([]);
+  const [products, setProducts] = useState([]);
   const [status, setStatus] = useState(0); // 0 loading, 1 loaded, 2 error
 
   // Properties
   const path = `categories/${category.id}/menuItems`;
 
   // Methods
-  const fetchData = useCallback(async (path) => {
+  const fetchData = useCallback(async (url) => {
     try {
-      const dishes = await getCollection(path);
+      const menuItems = await getCollection(url);
 
-      setItems(dishes);
-      productDispatch({ type: "READ_DISHES", payload: dishes });
+      setProducts(menuItems);
+      productDispatch({ type: "READ_PRODUCT", payload: menuItems });
       setStatus(1);
     } catch {
       setStatus(2);
@@ -34,53 +34,52 @@ export default function CategoryItems({ category, onEdit }) {
 
   return (
     <div className="admin-category-details">
-      <div className="category-header">
-        <h1> {name}</h1>
-        <button className="button add-btn" onClick={onEdit}>
+      <header>
+        <h1>{name}</h1>
+        <button className="button edit-btn" onClick={onEdit}>
           Edit Category
         </button>
-      </div>
+      </header>
 
       <div className="category-items">
-        <h2>Dishes</h2>
-        <Link className="button add-btn" to="/admin-products/new-product">
-          Add Dish
+        <h2>Menu Items</h2>
+        <Link className="button edit-btn" to="/admin-products/new-product">
+          Add Product
         </Link>
         <table className="admin-table category-table">
           <thead>
             <tr>
-              {/* <th>&nbsp;</th> */}
               <th>Title</th>
               <th>Description</th>
               <th>Picture</th>
+              {/* <th>&nbsp;</th> */}
             </tr>
           </thead>
           <tbody>
-            {items.map((item) => {
+            {products.map((product) => {
               return (
-                <tr key={item.id}>
-                  {/* <td>
-                <button
+                <tr key={product.id}>
+                  <td>
+                    <Link
+                      className="admin-link"
+                      to={"/admin-products/" + product.slug}
+                    >
+                      {product.name}
+                    </Link>
+                  </td>
+                  <td>{product.shortDescription}</td>
+                  <td>
+                    <img src={product.imageURL} alt="Category thumbnail" />
+                  </td>
+
+                  {/* <button
                   className="button btn-outline-danger"
                   onClick={() => {
                     deleteCategory(category.id);
                   }}
                 >
                   Delete
-                </button>
-              </td> */}
-                  <td>
-                    <Link
-                      className="admin-link"
-                      to={"/admin-products/" + item.slug}
-                    >
-                      {item.name}
-                    </Link>
-                  </td>
-                  <td>{item.shortDescription}</td>
-                  <td>
-                    <img src={item.imageURL} alt="Category thumbnail" />
-                  </td>
+                </button> */}
                 </tr>
               );
             })}

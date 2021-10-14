@@ -24,7 +24,7 @@ export default function Browser() {
       <Route path="/admin" component={AdminPage} />
       <Route path="/admin-categories/:slug" component={AdminCategory} />
       <Route path="/admin-products/:slug" component={AdminProduct} />
-      <Route path="/admin-product/:id" component={AdminProductDetails} />
+      <Route path="/admin-product/:slug" component={AdminProductDetails} />
     </Switch>
     </main>
     <Footer />

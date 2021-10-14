@@ -1,38 +1,38 @@
 export default function productReducer(state, action) {
   switch (action.type) {
-    case "CREATE_DISH":
-      return createDish(state, action);
-    case "READ_DISHES":
-      return readDishes(state, action);
-    case "UPDATE_DISH":
-      return updateDish(state, action);
-    case "DELETE_DISHES":
-      return deleteDish(state, action);
+    case "CREATE_PRODUCT":
+      return createProduct(state, action);
+    case "READ_PRODUCT":
+      return readProduct(state, action);
+    case "UPDATE_PRODUCT":
+      return updateProduct(state, action);
+    case "DELETE_PRODUCT":
+      return deleteProduct(state, action);
     default:
       throw new Error(`No action type found ${action.type}`);
   }
 }
 
-function createDish(state, action) {
+function createProduct(state, action) {
   const { payload } = action;
 
   if (payload !== null) return [...state, payload];
   return state;
 }
 
-function readDishes(state, action) {
+function readProduct(state, action) {
   const { payload } = action;
 
   if (payload !== null) return payload;
   return state;
 }
 
-function updateDish(state, action) {
+function updateProduct(state, action) {
   // pending
   return state;
 }
 
-function deleteDish(state, action) {
+function deleteProduct(state, action) {
   // pending
   return state;
 }
