@@ -8,7 +8,7 @@ import { useMenu } from "./state/MenuProvider";
 
 export default function App() {
   // Constants
-  const { dispatch } = useMenu();
+  const { categoryDispatch } = useMenu();
 
   // Local state
   const [status, setStatus] = useState(0); // 0 loading, 1 loaded, 2 error
@@ -18,7 +18,7 @@ export default function App() {
     try {
       const data = await getCollection(path);
 
-      dispatch({ type: "READ_ALL_CATEGORIES", payload: data });
+      categoryDispatch({ type: "READ_ALL_CATEGORIES", payload: data });
       setStatus(1);
     } catch {
       setStatus(2);

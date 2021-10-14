@@ -1,0 +1,28 @@
+{
+  "image": {
+    "label": "Image"
+  },
+  "name": {
+    "label": "Product name",
+    "instructions": "",
+    "placeholder": "Grilled meat",
+    "type": "text"
+  },
+  "shortDescription": {
+    "label": "Short description",
+    "instructions": "",
+    "placeholder": "A short description of the product",
+    "type": "text"
+  },
+  "detailedDescription": {
+    "label": "Detailed description",
+    "instructions": "",
+    "placeholder": "A detailed description of the product",
+    "type": "text"
+  },
+  "ingredients": {
+    "label": "Ingredients",
+    "instructions": "Ingredient1, ingredient 2 etc.",
+    "placeholder": "A list of the product ingredients"
+  }
+}

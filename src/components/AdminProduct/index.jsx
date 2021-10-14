@@ -1,10 +1,7 @@
-// NPM packages
-import { Link } from "react-router-dom";
-
 // Project files
 import { useMenu } from "../../state/MenuProvider";
 
-export default function AdminProducts({ match, history }) {
+export default function AdminProduct({ match, history }) {
   const { name, slug } = match.params;
   const { categories } = useMenu();
 

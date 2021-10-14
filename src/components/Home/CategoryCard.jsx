@@ -1,14 +1,10 @@
-
 export default function CategoryCard({ item }) {
-
-  const { name, description } = item;
-  // const {image} = item;
-  // const imageSrc = require(`../assets/images/${image}`).default;
+  const { name, description, imageURL } = item;
 
   return (
     <section className="card">
       <div className="card-image">
-        {/* <img src={imageSrc} alt="Card" /> */}
+        <img src={imageURL} alt="Card" />
       </div>
       <div className="description">
         <h2 className="card-header">{name}</h2>

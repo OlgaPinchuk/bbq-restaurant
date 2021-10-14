@@ -1,9 +1,9 @@
-export default function dishesReducer(state, action) {
+export default function productReducer(state, action) {
   switch (action.type) {
     case "CREATE_DISH":
       return createDish(state, action);
-    case "READ_ALL_DISHES":
-      return readAllDishes(state, action);
+    case "READ_DISHES":
+      return readDishes(state, action);
     case "UPDATE_DISH":
       return updateDish(state, action);
     case "DELETE_DISHES":
@@ -20,7 +20,7 @@ function createDish(state, action) {
   return state;
 }
 
-function readAllDishes(state, action) {
+function readDishes(state, action) {
   const { payload } = action;
 
   if (payload !== null) return payload;

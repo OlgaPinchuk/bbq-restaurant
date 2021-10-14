@@ -15,7 +15,7 @@ export default function CategoryForm({ category, id }) {
   const [description, setDescription] = useState(category.description);
 
   // Properties
-  const { dispatch } = useMenu();
+  const { categoryDispatch } = useMenu();
   const slug = name.toLowerCase().split(" ").join("-");
   const filename = `images/${slug}`;
 
@@ -37,7 +37,7 @@ export default function CategoryForm({ category, id }) {
     else await createDocument(path, editedCategory);
 
     // 2 call the dispatches to update candidates AFTER upload
-    dispatch({
+    categoryDispatch({
       type: "UPDATE_CATEGORY",
       payload: { id: id, data: editedCategory },
     });
@@ -45,8 +45,6 @@ export default function CategoryForm({ category, id }) {
 
   return (
     <section className="form category-form">
-      <p>ImageURL: @{imageURL}@</p>
-
       <InputField state={[name, setName]} options={fields.name} />
       <InputField
         state={[description, setDescription]}
@@ -59,7 +57,7 @@ export default function CategoryForm({ category, id }) {
       />
       <footer>
         <button className="button" onClick={onPublish}>
-          Publish profile
+          Publish category
         </button>
       </footer>
     </section>

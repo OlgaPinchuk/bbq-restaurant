@@ -7,8 +7,8 @@ import HomePage from "../Home";
 import MenuPage from "../Menu";
 import ContactPage from "../Contact";
 import AdminPage from "../Admin";
-import AdminProducts from "../AdminProducts";
-import AdminCategories from "../AdminCategories";
+import AdminProduct from "../AdminProduct";
+import AdminCategory from "../AdminCategory";
 import AdminProductDetails from "../AdminProductDetails";
 import Footer from "./Footer";
 
@@ -22,8 +22,8 @@ export default function Browser() {
       <Route path="/menu" component={MenuPage} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/admin" component={AdminPage} />
-      <Route path="/admin-categories/:id" component={AdminCategories} />
-      <Route path="/admin-products/:id" component={AdminProducts} />
+      <Route path="/admin-categories/:slug" component={AdminCategory} />
+      <Route path="/admin-products/:slug" component={AdminProduct} />
       <Route path="/admin-product/:id" component={AdminProductDetails} />
     </Switch>
     </main>

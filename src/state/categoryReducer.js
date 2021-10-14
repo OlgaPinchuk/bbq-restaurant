@@ -1,4 +1,4 @@
-export default function categoriesReducer(state, action) {
+export default function categoryReducer(state, action) {
   switch (action.type) {
     case "CREATE_CATEGORY":
       return createCategory(state, action);

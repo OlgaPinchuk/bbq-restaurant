@@ -2,19 +2,19 @@
 import { useContext, createContext, useReducer } from "react";
 
 // Project files
-import categoriesReducer from "./categoriesReducer";
-import dishesReducer from "./dishesReducer";
+import categoryReducer from "./categoryReducer";
+import productReducer from "./productReducer";
 
 // Properties
 const MenuContext = createContext(null);
 
 export function MenuProvider({ children }) {
   // Local state
-  const [categories, dispatch] = useReducer(categoriesReducer, []);
-  const [dishes, dispatchDish] = useReducer(dishesReducer, []);
+  const [categories, categoryDispatch] = useReducer(categoryReducer, []);
+  const [dishes, productDispatch] = useReducer(productReducer, []);
 
   return (
-    <MenuContext.Provider value={{ categories, dishes, dispatch, dispatchDish }}>
+    <MenuContext.Provider value={{ categories, dishes, categoryDispatch, productDispatch }}>
       {children}
     </MenuContext.Provider>
   );
