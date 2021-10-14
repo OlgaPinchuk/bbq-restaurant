@@ -1,0 +1,18 @@
+.admin-product-details {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.admin-product-details img {
+  max-width: 40vw;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.admin-product-details .card {
+  margin: 20px auto;
+  flex-direction: row;
+  background: slategrey;
+  border-radius: 10px;
+}

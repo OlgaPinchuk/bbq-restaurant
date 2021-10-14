@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 // Project files
 import InputField from "../../shared/InputField";
 import InputImage from "../../shared/InputImage";
+import ButtonCancel from "../../shared/ButtonCancel";
 import fields from "./fields.json";
 import { useMenu } from "../../../state/MenuProvider";
 import { updateDocument, createDocument } from "../../../scripts/fireStore";
@@ -18,7 +19,7 @@ export default function ProductForm({ product, id, categoryId }) {
   const [imageURL, setImageUrL] = useState(product.imageURL);
   const [price, setPrice] = useState(product.price);
   const [shortInfo, setShortInfo] = useState(product.shortInfo);
-  const [detailedInfo, setDetailedIndo] = useState(product.detailedInfo);
+  const [detailedInfo, setDetailedInfo] = useState(product.detailedInfo);
   const [ingredients, setIngredients] = useState(
     product.ingredients && product.ingredients.join(", ")
   );
@@ -29,6 +30,7 @@ export default function ProductForm({ product, id, categoryId }) {
   const filename = `images/${slug}`;
 
   // Methods
+
   async function onPublish() {
     const path = `categories/${categoryId}/menuItems/`;
     const ingredientsToArray =
@@ -48,12 +50,9 @@ export default function ProductForm({ product, id, categoryId }) {
 
     console.log("editedProduct", editedProduct);
 
-    // to do
-    // 1 upload to firebase using await
     if (id !== "") await updateDocument(path, id, editedProduct);
     else await createDocument(path, editedProduct);
 
-    // 2 call the dispatches to update candidates AFTER upload
     productDispatch({
       type: "UPDATE_PRODUCT",
       payload: { id: id, data: editedProduct },
@@ -70,7 +69,7 @@ export default function ProductForm({ product, id, categoryId }) {
         options={fields.shortInfo}
       />
       <InputField
-        state={[detailedInfo, setDetailedIndo]}
+        state={[detailedInfo, setDetailedInfo]}
         options={fields.detailedInfo}
       />
       <InputImage
@@ -87,6 +86,7 @@ export default function ProductForm({ product, id, categoryId }) {
         <button className="button save-button" onClick={onPublish}>
           Publish product
         </button>
+        <ButtonCancel message={fields.cancelButton.message} />
       </footer>
     </section>
   );

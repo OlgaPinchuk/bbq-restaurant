@@ -28,7 +28,11 @@
   },
   "ingredients": {
     "label": "Ingredients",
-    "instructions": "Enter ingredients(separate by commas)",
-    "placeholder": "A list of the product ingredients"
+    "instructions": "",
+    "placeholder": "Enter ingredients(separate by commas)",
+    "type": "text"
+  },
+  "cancelButton": {
+    "message": "Are you sure you want to abort editing the form?" 
   }
 }

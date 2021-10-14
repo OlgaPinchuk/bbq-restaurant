@@ -27,7 +27,7 @@ export default function AdminCategory() {
   }
 
   return (
-    <section className="page admin-category">
+    <section className="page admin admin-category">
       {!editMode ? (
         <CategoryItems category={currentCategory} onEdit={() => setEditMode(true)} />
       ) : (

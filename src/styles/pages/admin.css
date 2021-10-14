@@ -2,11 +2,14 @@
   margin-top: 90px;
 }
 
-.admin-page .button {
+.admin .button {
   display: inline-block;
+  margin: 0;
   padding: 8px 10px;
+  max-width: none;
   width: auto;
   height: auto;
+  color: #fff;
   background-color: transparent;
   border: 1px solid transparent;
   text-align: center;
@@ -15,18 +18,18 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.admin-page .edit-btn {
-  margin: 0;
-  width: auto;
-  max-width: none;
-  color: #fff;
-  background-color: darkslateblue;
-  border: 1px solid darkslateblue;
+.admin .add-btn {
+  background-color: var(--color-sucess);
+  border: 1px solid var(--color-sucess);
 }
 
-.admin-page .edit-btn:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
+.admin .edit-btn {
+  background-color: var(--color-attention);
+  border: 1px solid var(--color-attention);
+}
+
+.admin .edit-btn:hover {
+  border-color: var(--color-white);
 }
 
 .admin-page h2 {
@@ -39,6 +42,22 @@
 .menu-categories {
   margin: 0 auto;
   width: 90vw;
+}
+
+/* Header */
+
+.admin-header {
+  padding: 35px 0;
+  background: var(--color-light-grey);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-header .edit-btn {
+  margin: 0;
+  margin-left: 15px;
 }
 
 /* Table */
@@ -56,11 +75,19 @@
 }
 
 .admin-table thead th {
-  /* padding: 10px; */
   vertical-align: bottom;
   text-align: left;
   border-bottom: 2px solid #dee2e6;
 }
+
+.admin-table .thumb {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Buttons */
 
 .admin-page .btn-outline-danger {
   color: #dc3545;
@@ -78,6 +105,8 @@
   text-decoration: underline;
 }
 
+/* Forms */
+
 .admin-form {
   width: 50vw;
   min-width: 500px;
@@ -94,7 +123,8 @@
   font-size: 20px;
 }
 
-.admin-form input[type=text] {
+.admin-form input[type="text"],
+.admin-form input[type="number"] {
   margin: 0 auto;
   padding: 10px;
   width: 70%;
@@ -103,10 +133,16 @@
 }
 
 .admin-form .save-button {
-  background: #1ec469;
+  margin-right: 20px;
+  background: var(--color-sucess);
   color: var(--color-white);
 }
 
 .admin-form .cancel-button {
   background: var(--color-light-grey);
+}
+
+.admin-form footer {
+  display: flex;
+  justify-content: center;
 }

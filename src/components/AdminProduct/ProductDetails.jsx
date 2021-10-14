@@ -1,28 +1,35 @@
-export default function ProductDetails({ product, onEdit}) {
+export default function ProductDetails({ product, onEdit }) {
   // Properties
-  const {
-    name,
-    price,
-    imageURL,
-    detailedInfo,
-    ingredients = [],
-  } = product;
+  const { name, price, imageURL, detailedInfo, ingredients = [] } = product;
 
   return (
     <div className="admin-product-details">
-      <h1>{name}</h1>
-      <button className="button edit-btn" onClick={onEdit}>
-        Edit Product
-      </button>
-      <h2>Price: {price}</h2>
-      <img src={imageURL} alt={name} />
-      <p>{detailedInfo}</p>
+      <header className="admin-header">
+        <h1>{name}</h1>
+        <button className="button edit-btn" onClick={onEdit}>
+          Edit Product
+        </button>
+      </header>
+      <div className="product-details card">
+        <img src={imageURL} alt={name} />
+        <div className="description">
+          <p>{detailedInfo}</p>
+          <p>
+            <b>Price: {price}:-</b>
+          </p>
+        </div>
+      </div>
+
       {ingredients.length > 0 && (
         <div className="ingredients">
-          <h2>Ingredients:</h2>
-          {ingredients.map((item) => (
-            <p key={item}>{item}</p>
-          ))}
+          <h3>Ingredients:</h3>
+          <div className="pills">
+            {ingredients.map((item) => (
+              <span class="pill" key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       )}
     </div>

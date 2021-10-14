@@ -9,6 +9,10 @@
   --color-light-grey: #ecf1f9;
   --color-white: #ffffff;
 
+  --color-sucess: #04aa6d;
+  --color-attention: #ff9800;
+  --color-danger: #f44336;
+
   /* Space */
   --space-small: 8px;
   --space-medium: 16px;
@@ -22,6 +26,4 @@
   --font-size-medium: 16px;
   --font-size-big: 20px;
   --font-size-ultra: 50px;
-
 }
-

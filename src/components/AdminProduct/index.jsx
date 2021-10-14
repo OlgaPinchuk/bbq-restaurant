@@ -28,7 +28,7 @@ export default function AdminProduct({location}) {
   }
 
   return (
-    <section className="page admin-product">
+    <section className="page admin admin-product">
       {!editMode ? (
         <ProductDetails
           product={currentProduct}

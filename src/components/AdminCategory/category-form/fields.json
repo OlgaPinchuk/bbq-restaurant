@@ -13,5 +13,8 @@
     "instructions": "",
     "placeholder": "A short description of the category",
     "type": "text"
+  },
+  "cancelButton": {
+    "message": "Are you sure you want to abort editing the form?"
   }
 }

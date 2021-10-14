@@ -34,7 +34,7 @@ export default function CategoryItems({ category, onEdit }) {
 
   return (
     <div className="admin-category-details">
-      <header>
+      <header className="admin-header">
         <h1>{name}</h1>
         <button className="button edit-btn" onClick={onEdit}>
           Edit Category
@@ -43,7 +43,10 @@ export default function CategoryItems({ category, onEdit }) {
 
       <div className="category-items">
         <h2>Menu Items</h2>
-        <Link className="button edit-btn" to={{pathname: "/admin-products/new-product", state: category.id}}>
+        <Link
+          className="button add-btn"
+          to={{ pathname: "/admin-products/new-product", state: category.id }}
+        >
           Add Product
         </Link>
         <table className="admin-table category-table">
@@ -62,14 +65,21 @@ export default function CategoryItems({ category, onEdit }) {
                   <td>
                     <Link
                       className="admin-link"
-                      to={{pathname: `/admin-products/${product.slug}`, state: category.id}}
+                      to={{
+                        pathname: `/admin-products/${product.slug}`,
+                        state: category.id,
+                      }}
                     >
                       {product.name}
                     </Link>
                   </td>
                   <td>{product.shortInfo}</td>
                   <td>
-                    <img src={product.imageURL} alt="Category thumbnail" />
+                    <img
+                      className="thumb"
+                      src={product.imageURL}
+                      alt={product.name}
+                    />
                   </td>
 
                   {/* <button

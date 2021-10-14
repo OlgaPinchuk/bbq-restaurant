@@ -10,7 +10,7 @@ export default function MenuCategories() {
   return (
     <div className="menu-categories">
       <h1>Menu Categories</h1>
-      <Link className="button edit-btn" to="/admin-categories/new-category">
+      <Link className="button add-btn" to="/admin-categories/new-category">
         Add Category
       </Link>
 
@@ -18,7 +18,6 @@ export default function MenuCategories() {
       <table className="admin-table category-table">
         <thead>
           <tr>
-            {/* <th>&nbsp;</th> */}
             <th>Title</th>
             <th>Description</th>
             <th>Picture</th>
@@ -38,7 +37,11 @@ export default function MenuCategories() {
                 </td>
                 <td>{category.description}</td>
                 <td>
-                  <img src={category.imageURL} alt="Category thumbnail" />
+                  <img
+                    className="thumb"
+                    src={category.imageURL}
+                    alt={category.name}
+                  />
                 </td>
               </tr>
             );
@@ -46,6 +49,5 @@ export default function MenuCategories() {
         </tbody>
       </table>
     </div>
-
   );
 }

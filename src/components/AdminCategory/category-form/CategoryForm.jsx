@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 // Project files
 import InputField from "../../shared/InputField";
 import InputImage from "../../shared/InputImage";
+import ButtonCancel from "../../shared/ButtonCancel";
 import fields from "./fields.json";
 import { useMenu } from "../../../state/MenuProvider";
 import { updateDocument, createDocument } from "../../../scripts/fireStore";
@@ -61,6 +62,7 @@ export default function CategoryForm({ category, id }) {
         <button className="button save-button" onClick={onPublish}>
           Publish category
         </button>
+        <ButtonCancel message={fields.cancelButton.message}/>
       </footer>
     </section>
   );
