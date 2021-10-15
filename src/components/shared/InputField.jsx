@@ -4,14 +4,16 @@ export default function InputField({ options, state }) {
 
   return (
     <fieldset className="input-field">
-      <legend><b>{label}:</b></legend>
-        {instructions && <small>{instructions}</small>}
-        <input
-          type={type}
-          placeholder={placeholder}
-          value={getter}
-          onChange={(event) => setter(event.target.value)}
-        />
+      <legend>
+        <b>{label}:</b>
+      </legend>
+      {instructions && <small>{instructions}</small>}
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={getter}
+        onChange={(event) => setter(event.target.value)}
+      />
     </fieldset>
   );
 }

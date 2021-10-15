@@ -28,11 +28,18 @@ function readProduct(state, action) {
 }
 
 function updateProduct(state, action) {
-  // pending
+  const { payload } = action;
+  const { id, data } = payload;
+  const product = state.find((item) => item.id === id);
+
+  if (product === undefined) throw new Error("category not found");
   return state;
 }
 
 function deleteProduct(state, action) {
-  // pending
+  const { payload } = action;
+  if (payload !== null) {
+    return [...state, state.filter((item) => item.id !== payload)];
+  }
   return state;
 }

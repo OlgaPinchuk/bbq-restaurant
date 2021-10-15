@@ -28,19 +28,18 @@ export default function ProductDetails({ product, onEdit, onDelete }) {
         </div>
       </div>
 
-        {/* To-do: Pills component */}
-        {ingredients.length > 0 && (
-          <div className="ingredients">
-            <h3>Ingredients:</h3>
-            <div className="pills">
-              {ingredients.map((item) => (
-                <span className="pill" key={item}>
-                  {item}
-                </span>
-              ))}
-            </div>
+      {ingredients.length > 0 && (
+        <div className="ingredients">
+          <h3>Ingredients:</h3>
+          <div className="pills">
+            {ingredients.map((item) => (
+              <span className="pill" key={item}>
+                {item}
+              </span>
+            ))}
           </div>
-        )}
+        </div>
+      )}
     </div>
   );
 }

@@ -17,11 +17,14 @@ export default function InputImage({ label, state, filename }) {
 
   return (
     <fieldset className="input-image">
-      <legend><b>{label}:</b></legend>
-      <label className="custom-file-chooser"><b>Upload image:</b>
+      <legend>
+        <b>{label}:</b>
+      </legend>
+      <label className="custom-file-chooser">
+        <b>Upload image:</b>
         <input onChange={(event) => onEvent(event, filename)} type="file" />
         <img src={Image} alt="User generated content" />
-        </label>
+      </label>
     </fieldset>
   );
 }

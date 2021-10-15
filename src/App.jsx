@@ -25,7 +25,6 @@ export default function App() {
     }
   }, []);
 
-  // @ts-ignore
   useEffect(() => fetchData("categories"), [fetchData]);
 
   return (

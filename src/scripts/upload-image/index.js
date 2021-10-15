@@ -7,7 +7,6 @@ import resizeImage from "./resizeImage";
 export async function uploadImage(event, filename) {
   const file = event.target.files[0];
 
-
   const originalImage = await readImage(file);
   const resizedImaged = await resizeImage(originalImage, 900, 600);
   const imageForFirebase = await dataURLToFile(

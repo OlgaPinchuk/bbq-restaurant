@@ -13,7 +13,7 @@ export default function ProductCard({ item }) {
             <h2 className="product card-header">{name}</h2>
             <p>{shortInfo}</p>
             <p>
-              <b>Price: {price}</b>
+              <b>Price: {price}:-</b>
             </p>
           </div>
         </section>

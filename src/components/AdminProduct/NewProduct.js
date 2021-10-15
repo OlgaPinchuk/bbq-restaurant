@@ -7,7 +7,7 @@ const newProduct = {
   shortInfo: "",
   detailedInfo: "",
   slug: "",
-  ingredients: []
+  ingredients: [],
 };
 
 export default newProduct;

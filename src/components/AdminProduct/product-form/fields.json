@@ -33,6 +33,6 @@
     "type": "text"
   },
   "cancelButton": {
-    "message": "Are you sure you want to abort editing the form?" 
+    "message": "Are you sure you want to abort editing the form?"
   }
 }

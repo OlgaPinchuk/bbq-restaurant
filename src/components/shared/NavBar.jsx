@@ -7,7 +7,7 @@ import logo from "../../assets/images/logo.png";
 export default function NavBar() {
   return (
     <nav className="site-navigation">
-     <Link to="/">
+      <Link to="/">
         <img className="logo" src={logo} alt="Restaurant logo" />
       </Link>
 
@@ -17,10 +17,6 @@ export default function NavBar() {
         </li>
         <li>
           <Link to="/contact">Contact us</Link>
-        </li>
-      {/* Temporary */}
-        <li>
-          <Link to="/admin">Admin</Link>
         </li>
       </ul>
     </nav>

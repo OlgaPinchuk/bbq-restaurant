@@ -31,7 +31,7 @@ function updateCategory(state, action) {
   const { payload } = action;
   const { id, data } = payload;
   const category = state.find((item) => item.id === id);
-  
+
   if (category === undefined) throw new Error("category not found");
   return state;
 }

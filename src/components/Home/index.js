@@ -7,7 +7,9 @@ export default function HomePage() {
       <section className="hero">
         <h1>BBQ Ribs House</h1>
         <small className="subheader">Delicious. Home made. Meat-based.</small>
-        <Link className="button view-link" to="/menu">Our Menu</Link>
+        <Link className="button view-link" to="/menu">
+          Our Menu
+        </Link>
       </section>
     </section>
   );

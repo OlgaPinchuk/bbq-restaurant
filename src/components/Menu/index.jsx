@@ -16,7 +16,7 @@ export default function MenuPage() {
       </Link>
     </li>
   ));
-  
+
   return (
     <div className="page menu-page">
       <section className="hero">

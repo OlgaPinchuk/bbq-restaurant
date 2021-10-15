@@ -36,7 +36,6 @@ export async function updateDocument(path, docId, data) {
 // Delete file
 export async function deleteDocument(path, id) {
   const documentReference = doc(fireStoreInstance, path, id);
-  console.log("docReference", documentReference);
 
   await deleteDoc(documentReference);
 }

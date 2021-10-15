@@ -48,8 +48,6 @@ export default function ProductForm({ product, id, categoryId }) {
       slug: slug,
     };
 
-    console.log("editedProduct", editedProduct);
-
     if (id !== "") await updateDocument(path, id, editedProduct);
     else await createDocument(path, editedProduct);
 
@@ -62,6 +60,11 @@ export default function ProductForm({ product, id, categoryId }) {
 
   return (
     <section className="form admin-form">
+      <h2>Product form</h2>
+      <p>
+        Please fill in the form with the category details. All fields are
+        required!
+      </p>
       <InputField state={[name, setName]} options={fields.name} />
       <InputField state={[price, setPrice]} options={fields.price} />
       <InputField

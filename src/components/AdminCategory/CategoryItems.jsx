@@ -28,7 +28,7 @@ export default function CategoryItems({ category, onEdit, onDelete }) {
     } catch {
       setStatus(2);
     }
-  }, []);
+  }, [productDispatch]);
 
   useEffect(() => fetchData(path), [fetchData]);
 
@@ -88,15 +88,6 @@ export default function CategoryItems({ category, onEdit, onDelete }) {
                       alt={product.name}
                     />
                   </td>
-
-                  {/* <button
-                  className="button btn-danger"
-                  onClick={() => {
-                    deleteCategory(category.id);
-                  }}
-                >
-                  Delete
-                </button> */}
                 </tr>
               );
             })}

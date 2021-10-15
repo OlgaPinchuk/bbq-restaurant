@@ -14,7 +14,9 @@ export function MenuProvider({ children }) {
   const [products, productDispatch] = useReducer(productReducer, []);
 
   return (
-    <MenuContext.Provider value={{ categories, products, categoryDispatch, productDispatch }}>
+    <MenuContext.Provider
+      value={{ categories, products, categoryDispatch, productDispatch }}
+    >
       {children}
     </MenuContext.Provider>
   );

@@ -39,7 +39,9 @@ export default function BookingForm() {
         <InputField state={[date, setDate]} options={fields.date} />
 
         <InputField state={[time, setTime]} options={fields.time} />
-        <small><i>All fields are required fields</i></small>
+        <small>
+          <i>All fields are required fields</i>
+        </small>
         <button
           type="submit"
           className="button submit-btn"

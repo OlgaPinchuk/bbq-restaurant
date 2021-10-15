@@ -8,15 +8,14 @@ export default function MenuCategories() {
   const { categories } = useMenu();
   const orderedCategories = categories.sort((a, b) => a.orderId - b.orderId);
 
-
   return (
     <div className="menu-categories">
       <h1>Menu Categories</h1>
+
       <Link className="button add-btn" to="/admin-categories/new-category">
         Add Category
       </Link>
 
-      {/* TO-do: refctor table */}
       <table className="admin-table category-table">
         <thead>
           <tr>

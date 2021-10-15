@@ -49,15 +49,16 @@ export default function CategoryForm({ category, id }) {
   return (
     <section className="form admin-form">
       <h2>{pageTitle}</h2>
+      <p>
+        Please fill in the form with the category details. All fields are
+        required!
+      </p>
       <InputField state={[name, setName]} options={fields.name} />
       <InputField
         state={[description, setDescription]}
         options={fields.description}
       />
-      <InputField
-        state={[orderId, setOrderId]}
-        options={fields.orderId}
-      />
+      <InputField state={[orderId, setOrderId]} options={fields.orderId} />
       <InputImage
         state={[imageURL, setImageUrL]}
         label={fields.image.label}
@@ -67,7 +68,7 @@ export default function CategoryForm({ category, id }) {
         <button className="button save-button" onClick={onPublish}>
           Publish category
         </button>
-        <ButtonCancel message={fields.cancelButton.message}/>
+        <ButtonCancel message={fields.cancelButton.message} />
       </footer>
     </section>
   );

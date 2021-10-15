@@ -44,8 +44,7 @@ export default function CategoryPage({ match }) {
         <small className="subheader">{description}</small>
       </section>
       <section className="category-content">
-        
-       <List list={products} Component={ProductCard} />
+        <List list={products} Component={ProductCard} />
       </section>
     </section>
   );

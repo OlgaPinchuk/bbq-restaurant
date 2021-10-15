@@ -32,6 +32,10 @@
   border-color: var(--color-white);
 }
 
+.admin-page .admin-header {
+  flex-direction: column;
+}
+
 .admin-page h2 {
   margin-bottom: 20px;
   font-size: 36px;
@@ -48,7 +52,7 @@
 
 .admin-header {
   padding: 35px 0;
-  background: var(--color-light-grey);
+  background: var(--color-green);
   border-radius: 7px;
   display: flex;
   justify-content: center;
