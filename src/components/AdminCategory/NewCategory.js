@@ -5,6 +5,7 @@ const newCategory = {
   url: "",
   description: "",
   slug: "",
+  orderId: 0,
 };
 
 export default newCategory;

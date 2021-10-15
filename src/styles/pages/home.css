@@ -15,12 +15,6 @@
   font-size: 35px;
 }
 
-.home-page .subheader {
-  font-size: var(--font-size-small);
-  color: var(--color-white);
-  text-align: center;
-}
-
 .view-link {
   margin-top: var(--space-medium);
   padding: 0 10px;

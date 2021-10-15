@@ -6,6 +6,8 @@ import { useMenu } from "../../state/MenuProvider";
 
 export default function MenuCategories() {
   const { categories } = useMenu();
+  const orderedCategories = categories.sort((a, b) => a.orderId - b.orderId);
+
 
   return (
     <div className="menu-categories">
@@ -18,15 +20,17 @@ export default function MenuCategories() {
       <table className="admin-table category-table">
         <thead>
           <tr>
-            <th>Title</th>
+            <th>Order id</th>
+            <th className="title">Title</th>
             <th>Description</th>
             <th>Picture</th>
           </tr>
         </thead>
         <tbody>
-          {categories.map((category) => {
+          {orderedCategories.map((category) => {
             return (
               <tr key={category.id}>
+                <td>{category.orderId}</td>
                 <td>
                   <Link
                     className="admin-link"

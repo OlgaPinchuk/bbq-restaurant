@@ -17,6 +17,7 @@ export default function CategoryForm({ category, id }) {
   // Local state
   const [imageURL, setImageUrL] = useState(category.imageURL);
   const [name, setName] = useState(category.name);
+  const [orderId, setOrderId] = useState(category.orderId);
   const [description, setDescription] = useState(category.description);
 
   // Properties
@@ -52,6 +53,10 @@ export default function CategoryForm({ category, id }) {
       <InputField
         state={[description, setDescription]}
         options={fields.description}
+      />
+      <InputField
+        state={[orderId, setOrderId]}
+        options={fields.orderId}
       />
       <InputImage
         state={[imageURL, setImageUrL]}

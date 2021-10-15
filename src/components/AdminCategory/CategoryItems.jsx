@@ -60,7 +60,7 @@ export default function CategoryItems({ category, onEdit, onDelete }) {
         <table className="admin-table category-table">
           <thead>
             <tr>
-              <th>Title</th>
+              <th className="title">Title</th>
               <th>Description</th>
               <th>Picture</th>
             </tr>

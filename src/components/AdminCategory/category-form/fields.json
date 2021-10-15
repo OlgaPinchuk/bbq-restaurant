@@ -14,6 +14,11 @@
     "placeholder": "A short description of the category",
     "type": "text"
   },
+  "orderId": {
+    "label": "Order id",
+    "instructions": "Order in the menu",
+    "type": "number"
+  },
   "cancelButton": {
     "message": "Are you sure you want to abort editing the form?"
   }

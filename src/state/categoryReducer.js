@@ -28,7 +28,11 @@ function readAllCategories(state, action) {
 }
 
 function updateCategory(state, action) {
-  // pending
+  const { payload } = action;
+  const { id, data } = payload;
+  const category = state.find((item) => item.id === id);
+  
+  if (category === undefined) throw new Error("category not found");
   return state;
 }
 

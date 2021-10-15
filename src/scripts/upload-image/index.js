@@ -12,7 +12,7 @@ export async function uploadImage(event, filename) {
   const resizedImaged = await resizeImage(originalImage, 900, 600);
   const imageForFirebase = await dataURLToFile(
     resizedImaged,
-    `${filename}.png`
+    `${filename}.jpg`
   );
   const newImageURL = await uploadFile(imageForFirebase, filename);
 

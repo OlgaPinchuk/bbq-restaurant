@@ -80,7 +80,7 @@
   border-bottom: 2px solid #dee2e6;
 }
 
-.admin-table thead th:first-of-type {
+.admin-table thead th.title {
   width: 30%;
 }
 

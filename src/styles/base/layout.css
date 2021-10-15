@@ -55,7 +55,7 @@ p {
 
 .page {
   grid-area: main;
-  margin: 90px auto;
+  margin: 75px auto;
 }
 
 .footer {
@@ -64,7 +64,7 @@ p {
 
 .hero {
   height: 40vh;
-  background-color: var(--color-green);
+  background-color: var(--color-black);
   overflow: hidden;
   display: grid;
   justify-content: center;
@@ -81,6 +81,16 @@ p {
 .hero h1 {
   color: var(--color-dark-red);
   font-family: Oswald, sans-serif;
+}
+
+.hero  .subheader {
+  font-size: var(--font-size-small);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.main-content {
+  background: var(--color-light-grey);
 }
 
 .page-content {
@@ -125,8 +135,4 @@ p {
     width: 100%;
   }
 
-  .card img,
-  .card .description {
-    width: 50%;
-  }
 }
