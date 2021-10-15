@@ -31,8 +31,6 @@ function updateProduct(state, action) {
   const { payload } = action;
   const { id, data } = payload;
   const product = state.find((item) => item.id === id);
-
-  if (product === undefined) throw new Error("category not found");
   return state;
 }
 

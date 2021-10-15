@@ -34,6 +34,7 @@ export default function CategoryForm({ category, id }) {
       name: name,
       description: description,
       slug: slug,
+      orderId: orderId,
     };
 
     if (id !== "") await updateDocument(path, id, editedCategory);
