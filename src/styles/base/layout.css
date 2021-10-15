@@ -17,7 +17,7 @@ h2 {
 }
 
 h1 {
-  font-size: var(--font-size-ultra);
+  font-size: 35px;
 }
 
 h2 {
@@ -28,7 +28,7 @@ p {
   font-size: 15px;
   line-height: 21px;
   margin-bottom: 15px;
-  max-width: 634px;
+  /* max-width: 634px; */
 }
 
 .flex-column {
@@ -83,7 +83,7 @@ p {
   font-family: Oswald, sans-serif;
 }
 
-.hero  .subheader {
+.hero .subheader {
   font-size: var(--font-size-small);
   color: var(--color-white);
   text-align: center;
@@ -127,12 +127,16 @@ p {
   vertical-align: middle;
 }
 
-
 /* Media queries */
 @media (min-width: 1024px) {
   .products-category .card {
     flex-direction: row;
     width: 100%;
   }
-
+   h1 {
+    font-size: var(--font-size-ultra);
+  }
+  .subheader {
+    font-size: 20px;
+  }
 }

@@ -29,12 +29,6 @@
 
 /* Media queries */
 @media (min-width: 1024px) {
-  .home-page h1 {
-    font-size: var(--font-size-ultra);
-  }
-  .home-page .subheader {
-    font-size: 20px;
-  }
 
   .view-link {
     font-size: 22px;

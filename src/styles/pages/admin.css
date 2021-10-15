@@ -108,6 +108,11 @@
   color: darkslateblue;
   text-decoration: underline;
 }
+.admin .cancel-button {
+  color: var(--color-black);
+  background: none;
+  border: none;
+}
 
 /* Forms */
 

@@ -24,6 +24,9 @@
 .menu .categories-list .card {
   margin: 10px;
   width: 360px;
-  background: radial-gradient(black, transparent);
   display: flex;
+}
+
+.menu .categories-list li {
+  background: radial-gradient(var(--color-black), transparent);
 }

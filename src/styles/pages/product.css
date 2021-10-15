@@ -17,9 +17,10 @@
 
 .pills {
   margin-bottom: 55px;
+  text-transform: capitalize;
   display: flex;
   flex-wrap: wrap;
-  text-transform: capitalize;
+  justify-content: center;
 }
 
 .pill {
