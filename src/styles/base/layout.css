@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h2 {
+  margin: var(--space-small) 0;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 21px;
+  margin-bottom: 15px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  height: 100vh;
+  font-family: Quicksand, sans-serif;
+  font-weight: normal;
+  font-size: var(--font-size-medium);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.site-navigation {
+  grid-area: header;
+}
+
+.page {
+  grid-area: main;
+  margin: 75px auto;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.hero {
+  height: 40vh;
+  background-color: var(--color-black);
+  overflow: hidden;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.hero-image {
+  max-width: 70vw;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.hero h1 {
+  color: var(--color-dark-red);
+  font-family: Oswald, sans-serif;
+}
+
+.hero .subheader {
+  font-size: var(--font-size-small);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.main-content {
+  background: var(--color-light-grey);
+}
+
+.page-content {
+  max-width: var(--max-width);
+  margin: var(--space-big) auto;
+}
+
+.page-description {
+  margin: var(--space-big);
+  font-size: var(--font-size-big);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.button {
+  margin: 10px auto;
+  max-width: 200px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: var(--color-green);
+  border-radius: 5px;
+  font-size: var(--font-size-medium);
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.custom-file-chooser img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Media queries */
+@media (min-width: 1024px) {
+  .products-category .card {
+    flex-direction: row;
+    width: 100%;
+  }
+  h1 {
+    font-size: var(--font-size-ultra);
+  }
+  .subheader {
+    font-size: 20px;
+  }
+}

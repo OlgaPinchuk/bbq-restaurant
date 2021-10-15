@@ -1,0 +1,26 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* Base */
+@import url("./base/variables.css");
+@import url("./base/reset.css");
+@import url("./base/layout.css");
+
+/* Pages */
+@import url("./pages/admin.css");
+@import url("./pages/admin-categories.css");
+@import url("./pages/admin-product.css");
+@import url("./pages/category.css");
+@import url("./pages/contact.css");
+@import url("./pages/home.css");
+@import url("./pages/menu.css");
+@import url("./pages/product.css");
+
+/* Components */
+@import url("./components/nav-bar.css");
+@import url("./components/footer.css");
+@import url("./components/booking-form.css");
+@import url("./components/card.css");
+@import url("./components/responsive-map.css");

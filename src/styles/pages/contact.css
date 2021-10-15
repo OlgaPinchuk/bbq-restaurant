@@ -1,0 +1,49 @@
+.contact .hero {
+  align-content: flex-start;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/images/contact-hero.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.content-section {
+  margin: 20px auto;
+  width: 90vw;
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  grid-gap: 10px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.content-section > * {
+  background: var(--color-light-grey);
+  padding: 5px;
+}
+
+.content-section input {
+  background: inherit;
+}
+
+.content-section h2 {
+  margin-bottom: 10px;
+  color: var(--color-dark-red);
+  font-size: var(--font-size-big);
+}
+
+.content-section b {
+  display: block;
+}
+
+/* Media queries */
+@media (min-width: 750px) {
+  .content-section {
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+  }
+
+  .content-section > * {
+    background: none;
+  }
+}

@@ -1,0 +1,26 @@
+.category-content {
+  margin: var(--space-big);
+  font-size: var(--font-size-big);
+}
+
+.category-content .product-card {
+  color: var(--color-green);
+  background: radial-gradient(black, transparent);
+}
+.category-content .product-card p {
+  color: var(--color-white);
+  text-align: center;
+  font-weight: 600;
+}
+
+.category-content .product-card img {
+  max-width: 100%;
+}
+
+/* Media queries */
+@media (min-width: 1024px) {
+  .category-content .card img,
+  .category-content .card .description {
+    width: 50%;
+  }
+}

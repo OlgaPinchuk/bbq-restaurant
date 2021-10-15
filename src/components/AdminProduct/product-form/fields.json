@@ -1,0 +1,38 @@
+{
+  "image": {
+    "label": "Image"
+  },
+  "name": {
+    "label": "Product name",
+    "instructions": "",
+    "placeholder": "f.ex. Grilled meat",
+    "type": "text"
+  },
+  "price": {
+    "label": "Product price",
+    "instructions": "",
+    "placeholder": "f.ex. 200",
+    "type": "number"
+  },
+  "shortInfo": {
+    "label": "Short description",
+    "instructions": "",
+    "placeholder": "A short description of the product",
+    "type": "text"
+  },
+  "detailedInfo": {
+    "label": "Detailed description",
+    "instructions": "",
+    "placeholder": "A detailed description of the product",
+    "type": "text"
+  },
+  "ingredients": {
+    "label": "Ingredients",
+    "instructions": "",
+    "placeholder": "Enter ingredients(separate by commas)",
+    "type": "text"
+  },
+  "cancelButton": {
+    "message": "Are you sure you want to abort editing the form?"
+  }
+}

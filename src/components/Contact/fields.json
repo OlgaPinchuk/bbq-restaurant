@@ -1,0 +1,21 @@
+{
+  "name": {
+    "label": "Full Name",
+    "instructions": "",
+    "placeholder": "Lars Nilson",
+    "type": "text"
+  },
+  "email": {
+    "label": "Email",
+    "placeholder": "l.nilson@mail.se",
+    "type": "email"
+  },
+  "date": {
+    "label": "Date",
+    "type": "date"
+  },
+  "time": {
+    "label": "Time",
+    "type": "time"
+  }
+}
