@@ -19,12 +19,12 @@ export default function HomePage() {
     <section className="page home-page">
       <section className="hero">
         <h1>BBQ Ribs House</h1>
-        <h2 className="slogan">Delicious. Home made. Meat-based.</h2>
-        <Link to="/menu">View Menu</Link>
+        <small className="subheader">Delicious. Home made. Meat-based.</small>
+        <Link className="button view-link" to="/menu">Our Menu</Link>
       </section>
-      <section className="menu">
+      {/* <section className="menu">
         <ul>{Categories}</ul>
-      </section>
+      </section> */}
     </section>
   );
 }
