@@ -1,9 +1,11 @@
 const newProduct = {
   id: "",
   name: "",
+  price: 0,
   imageURL: "",
   url: "",
-  description: "",
+  shortInfo: "",
+  detailedInfo: "",
   slug: "",
   ingredients: []
 };

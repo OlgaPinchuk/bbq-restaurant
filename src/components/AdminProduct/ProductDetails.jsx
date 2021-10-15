@@ -1,4 +1,4 @@
-export default function ProductDetails({ product, onEdit }) {
+export default function ProductDetails({ product, onEdit, onDelete }) {
   // Properties
   const { name, price, imageURL, detailedInfo, ingredients = [] } = product;
 
@@ -8,6 +8,14 @@ export default function ProductDetails({ product, onEdit }) {
         <h1>{name}</h1>
         <button className="button edit-btn" onClick={onEdit}>
           Edit Product
+        </button>
+        <button
+          className="button btn-danger"
+          onClick={() => {
+            onDelete(product.id);
+          }}
+        >
+          Delete product
         </button>
       </header>
       <div className="product-details card">
@@ -20,18 +28,19 @@ export default function ProductDetails({ product, onEdit }) {
         </div>
       </div>
 
-      {ingredients.length > 0 && (
-        <div className="ingredients">
-          <h3>Ingredients:</h3>
-          <div className="pills">
-            {ingredients.map((item) => (
-              <span class="pill" key={item}>
-                {item}
-              </span>
-            ))}
+        {/* To-do: Pills component */}
+        {ingredients.length > 0 && (
+          <div className="ingredients">
+            <h3>Ingredients:</h3>
+            <div className="pills">
+              {ingredients.map((item) => (
+                <span className="pill" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
     </div>
   );
 }

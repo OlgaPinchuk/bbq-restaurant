@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useMenu } from "../../state/MenuProvider";
 import { getCollection } from "../../scripts/fireStore";
 
-export default function CategoryItems({ category, onEdit }) {
+export default function CategoryItems({ category, onEdit, onDelete }) {
   // Global state
   const { productDispatch } = useMenu();
   const { name } = category;
@@ -39,6 +39,14 @@ export default function CategoryItems({ category, onEdit }) {
         <button className="button edit-btn" onClick={onEdit}>
           Edit Category
         </button>
+        <button
+          className="button btn-danger"
+          onClick={() => {
+            onDelete(category.id);
+          }}
+        >
+          Delete category
+        </button>
       </header>
 
       <div className="category-items">
@@ -55,7 +63,6 @@ export default function CategoryItems({ category, onEdit }) {
               <th>Title</th>
               <th>Description</th>
               <th>Picture</th>
-              {/* <th>&nbsp;</th> */}
             </tr>
           </thead>
           <tbody>
@@ -83,7 +90,7 @@ export default function CategoryItems({ category, onEdit }) {
                   </td>
 
                   {/* <button
-                  className="button btn-outline-danger"
+                  className="button btn-danger"
                   onClick={() => {
                     deleteCategory(category.id);
                   }}

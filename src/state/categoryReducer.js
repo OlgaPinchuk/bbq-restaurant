@@ -6,7 +6,7 @@ export default function categoryReducer(state, action) {
       return readAllCategories(state, action);
     case "UPDATE_CATEGORY":
       return updateCategory(state, action);
-    case "DELETE_CATEGORIES":
+    case "DELETE_CATEGORY":
       return deleteCategory(state, action);
     default:
       throw new Error(`No action type found ${action.type}`);
@@ -33,6 +33,9 @@ function updateCategory(state, action) {
 }
 
 function deleteCategory(state, action) {
-  // pending
+  const { payload } = action;
+  if (payload !== null) {
+    return [...state, state.filter((item) => item.id !== payload)];
+  }
   return state;
 }
