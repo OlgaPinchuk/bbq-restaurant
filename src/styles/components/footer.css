@@ -7,13 +7,13 @@
   align-items: center;
 }
 
-.social-media {
+.footer .social-media {
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
 }
 
-.social-media a {
+.footer .social-media a {
   display: inline-block;
   margin-right: var(--space-small);
 }

@@ -9,11 +9,11 @@
   margin-bottom: 27px;
 }
 
-.category-items {
+.admin-categories .category-items {
   margin-top: 40px;
 }
 
-.category-items h2 {
+.admin-categories .category-items h2 {
   text-align: center;
   font-size: 40px;
 }

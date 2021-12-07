@@ -3,9 +3,14 @@
   margin: 0 auto;
 }
 
+.admin-product-details h1 {
+  font-size: 35px;
+}
+
 .admin-product-details .card {
-  margin: 20px auto;
+  margin: 20px 0;
   height: 270px;
+  width: 100%;
   flex-direction: row;
   background: slategrey;
   border-radius: 10px;
@@ -19,3 +24,6 @@
   object-position: center;
 }
 
+.admin-product-details .pills {
+  justify-content: initial;
+}

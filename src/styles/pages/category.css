@@ -5,7 +5,7 @@
 
 .category-content .product-card {
   color: var(--color-green);
-  background: radial-gradient(black, transparent);
+  background: radial-gradient(var(--color-black), transparent);
 }
 .category-content .product-card p {
   color: var(--color-white);
