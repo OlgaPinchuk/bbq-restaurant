@@ -1,6 +1,6 @@
-.admin-page {
+/* .admin-page {
   margin-top: 90px;
-}
+} */
 
 .admin .button {
   display: inline-block;
@@ -9,7 +9,7 @@
   max-width: none;
   width: auto;
   height: auto;
-  color: #fff;
+  color: var(--color-white);
   background-color: transparent;
   border: 1px solid transparent;
   text-align: center;
@@ -42,6 +42,10 @@
   text-align: center;
   color: var(--color-dark-red);
 }
+
+/* .admin-header small {
+  font-size: 14px;
+} */
 
 .menu-categories {
   margin: 0 auto;

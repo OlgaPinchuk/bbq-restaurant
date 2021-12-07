@@ -30,6 +30,16 @@ p {
   margin-bottom: 15px;
 }
 
+small {
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+address > p {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;

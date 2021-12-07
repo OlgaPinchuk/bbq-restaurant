@@ -6,17 +6,19 @@ export default function ProductDetails({ product, onEdit, onDelete }) {
     <div className="admin-product-details">
       <header className="admin-header">
         <h1>{name}</h1>
-        <button className="button edit-btn" onClick={onEdit}>
-          Edit Product
-        </button>
-        <button
-          className="button btn-danger"
-          onClick={() => {
-            onDelete(product.id);
-          }}
-        >
-          Delete product
-        </button>
+        <div className="buttons">
+          <button className="button edit-btn" onClick={onEdit}>
+            Edit Product
+          </button>
+          <button
+            className="button btn-danger"
+            onClick={() => {
+              onDelete(product.id);
+            }}
+          >
+            Delete product
+          </button>
+        </div>
       </header>
       <div className="product-details card">
         <img src={imageURL} alt={name} />

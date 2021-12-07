@@ -13,11 +13,11 @@
   min-width: -webkit-fill-available;
 }
 
-label {
+.booking-form label {
   font-weight: bold;
 }
 
-small {
+.booking-form small {
   text-transform: initial;
   text-align: center;
 }

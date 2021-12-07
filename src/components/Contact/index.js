@@ -29,8 +29,8 @@ export default function ContactPage() {
           <address>
             <h3>BBQ Ribs House</h3>
             <p>Sankt Paulsgatan 4A</p>
-            <p>118 46</p>
             <p>Stockholm, Sweden</p>
+            <p>118 46</p>
           </address>
         </div>
         <BookingForm />
